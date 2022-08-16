@@ -40,12 +40,14 @@ def main():
     st.sidebar.caption(f"Version: `{ls.__version__}`")
     st.sidebar.caption(f"License: `{ls.__license__}`")
     st.sidebar.caption("")
-    st.sidebar.caption(f"[Website](https://lnkd.in/dKejmaH2)")
-    st.sidebar.caption(f"[Docs](https://lnkd.in/dt-2T4ZN)")
-    st.sidebar.caption(f"[Github](https://lnkd.in/dDttpiEG)")
-    # st.sidebar.caption(f"[Demo Page](https://lnkd.in/dxy-632M)")
-    st.sidebar.caption(f"[Hugging Face]( https://lnkd.in/d5-VVK62)")
-    st.sidebar.caption(f"[Pypi](https://lnkd.in/d7eDNb-B)")
+    st.sidebar.caption(f"[Website](https://canturan10.github.io/light_side/)")
+    st.sidebar.caption(f"[Docs](https://light-side.readthedocs.io/)")
+    st.sidebar.caption(f"[Github](https://github.com/canturan10/light_side)")
+    # st.sidebar.caption(f"[Demo Page]()")
+    st.sidebar.caption(
+        f"[Hugging Face](https://huggingface.co/spaces/canturan10/light_side)"
+    )
+    st.sidebar.caption(f"[Pypi](https://pypi.org/project/light-side/)")
     st.sidebar.caption("")
     st.sidebar.caption(ls.__copyright__)
 
