@@ -43,7 +43,7 @@ def main():
     st.sidebar.caption(f"[Website](https://canturan10.github.io/light_side/)")
     st.sidebar.caption(f"[Docs](https://light-side.readthedocs.io/)")
     st.sidebar.caption(f"[Github](https://github.com/canturan10/light_side)")
-    # st.sidebar.caption(f"[Demo Page]()")
+    # st.sidebar.caption(f"[Demo Page](https://canturan10-light-side-streamlit-app-guxrpf.streamlitapp.com/)")
     st.sidebar.caption(
         f"[Hugging Face](https://huggingface.co/spaces/canturan10/light_side)"
     )
