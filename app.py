@@ -1,14 +1,15 @@
 import random
 from datetime import datetime
 
-import av
 import light_side as ls
 import numpy as np
 import requests
 import streamlit as st
 from PIL import Image
 from streamlit_image_comparison import image_comparison
-from streamlit_webrtc import VideoProcessorBase, webrtc_streamer
+
+# import av
+# from streamlit_webrtc import VideoProcessorBase, webrtc_streamer
 
 
 def main():
@@ -49,6 +50,10 @@ def main():
     )
     st.sidebar.caption(f"[Pypi](https://pypi.org/project/light-side/)")
     st.sidebar.caption("")
+    st.sidebar.markdown(
+        "[![Support Badge](https://img.shields.io/badge/-buy_me_a%C2%A0coffee-orange?style=for-the-badge&logo=Buy-me-a-coffee&logoColor=white&link=https://canturan10.github.io/)](https://www.buymeacoffee.com/canturan10)"
+    )
+    st.sidebar.caption("")
     st.sidebar.caption(ls.__copyright__)
 
     selected_model = st.selectbox(
@@ -60,7 +65,7 @@ def main():
         ls.get_model_versions(selected_model),
     )
 
-    mode = st.radio("Select Inference Mode", ("Image", "Video (WebRTC)"))
+    mode = st.radio("Select Inference Mode", ("Image", "Video"))
 
     model = ls.Enhancer.from_pretrained(selected_model, selected_version)
     model.eval()
@@ -92,34 +97,40 @@ def main():
             label2="Light Side",
         )
     else:
-
         st.write(
-            "If video is not playing, please refresh the page. Depends on your browser and connection, it may take some time to load the video."
+            "This feature has been suspended for now. Errors may occur during service free of charge due to limited resources. If there is support for the project, I can activate this feature again by increasing the limit."
+        )
+        st.markdown(
+            "[![Support Badge](https://img.shields.io/badge/-buy_me_a%C2%A0coffee-orange?style=for-the-badge&logo=Buy-me-a-coffee&logoColor=white&link=https://canturan10.github.io/)](https://www.buymeacoffee.com/canturan10)"
         )
 
-        class VideoProcessor(VideoProcessorBase):
-            def recv(self, frame):
+        # st.write(
+        #     "If video is not playing, please refresh the page. Depends on your browser and connection, it may take some time to load the video."
+        # )
 
-                img = frame.to_ndarray(format="bgr24")
-                results = model.predict(img)[0]
-                orj_img = results["image"]
-                enh_img = results["enhanced"]
+        # class VideoProcessor(VideoProcessorBase):
+        #     def recv(self, frame):
 
-                return av.VideoFrame.from_ndarray(
-                    np.concatenate((orj_img, enh_img), axis=1), format="bgr24"
-                )
+        #         img = frame.to_ndarray(format="bgr24")
+        #         results = model.predict(img)[0]
+        #         orj_img = results["image"]
+        #         enh_img = results["enhanced"]
 
-        ctx = webrtc_streamer(
-            key="example",
-            video_processor_factory=VideoProcessor,
-            rtc_configuration={
-                "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
-            },
-            media_stream_constraints={
-                "video": True,
-                "audio": False,
-            },
-        )
+        #         return av.VideoFrame.from_ndarray(
+        #             np.concatenate((orj_img, enh_img), axis=1), format="bgr24"
+        #         )
+
+        # ctx = webrtc_streamer(
+        #     key="example",
+        #     video_processor_factory=VideoProcessor,
+        #     rtc_configuration={
+        #         "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+        #     },
+        #     media_stream_constraints={
+        #         "video": True,
+        #         "audio": False,
+        #     },
+        # )
 
 
 if __name__ == "__main__":
