@@ -21,7 +21,7 @@ dataFrameSerialization = "arrow"
 
 # Level of logging: 'error', 'warning', 'info', or 'debug'.
 # Default: 'info'
-level = "info"
+level = "debug"
 
 # String format for logging messages. If logger.datetimeFormat is set, logger messages will default to `%(asctime)s.%(msecs)03d %(message)s`. See [Python's documentation](https://docs.python.org/2.6/library/logging.html#formatter-objects) for available attributes.
 # Default: "%(asctime)s %(message)s"
@@ -82,7 +82,7 @@ fileWatcherType = "auto"
 
 # Symmetric key used to produce signed cookies. If deploying on multiple replicas, this should be set to the same value across all replicas to ensure they all share the same secret.
 # Default: randomly generated secret key.
-cookieSecret =
+#cookieSecret =
 
 # If false, will attempt to open a browser window on start.
 # Default: false unless (1) we are on a Linux box where DISPLAY is unset, or (2) we are running in the Streamlit Atom plugin.
