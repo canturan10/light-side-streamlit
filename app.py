@@ -30,7 +30,10 @@ def main():
     url = "https://raw.githubusercontent.com/canturan10/light_side/master/src/light_side.png?raw=true"
     light_side = Image.open(requests.get(url, stream=True).raw)
 
-    st.sidebar.image(light_side, width=100)
+    st.sidebar.image(
+        light_side,
+        width=100,
+    )
     st.sidebar.title("Light Side of the Night")
     st.sidebar.caption(ls.__description__)
 
@@ -44,10 +47,7 @@ def main():
     st.sidebar.caption(f"[Website](https://canturan10.github.io/light_side/)")
     st.sidebar.caption(f"[Docs](https://light-side.readthedocs.io/)")
     st.sidebar.caption(f"[Github](https://github.com/canturan10/light_side)")
-    # st.sidebar.caption(f"[Demo Page](https://canturan10-light-side-streamlit-app-guxrpf.streamlitapp.com/)")
-    st.sidebar.caption(
-        f"[Hugging Face](https://huggingface.co/spaces/canturan10/light_side)"
-    )
+    # st.sidebar.caption(f"[Hugging Face](https://huggingface.co/spaces/canturan10/light_side)")
     st.sidebar.caption(f"[Pypi](https://pypi.org/project/light-side/)")
     st.sidebar.caption("")
     st.sidebar.markdown(
