@@ -24,6 +24,11 @@
         <a href="https://pypi.org/project/light-side/">Pypi</a>
     </strong>
 </p>
+<p align="center">
+    <strong>
+        <a href="https://huggingface.co/spaces/canturan10/light_side"><img src="https://img.shields.io/badge/🤗-Open%20In%20Spaces-blue" /></a>
+    </strong>
+</p>
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/canturan10/light-side-streamlit/master/src/0.gif" width="500" />
