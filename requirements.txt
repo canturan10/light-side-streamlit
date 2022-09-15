@@ -1,6 +1,6 @@
-light_side
+light_side~=0.0.10
+opencv-python-headless~=4.6.0.66
 streamlit-image-comparison~=0.0.2
-streamlit~=1.8.1
-opencv-python-headless
+streamlit~=1.11.1
 # av~=9.2.0
 # streamlit-webrtc~=0.42.0
